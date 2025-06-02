@@ -1,35 +1,39 @@
-    body {
+ body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
       background-color: #ffffff;
       color: #003f5c;
       overflow-x: hidden;
     }
+
     header {
-      background-color: #003f5c;
+      background-color: #00b5c2;
       color: white;
       text-align: center;
       padding: 15px 20px;
-      top: 0;
-      z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     header a {
       color: #fff;
-      background: #00b5c2;
+      background: #003f5c;
       padding: 10px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
     }
+
     .section {
       padding: 60px 20px;
     }
+
     .section-title {
       text-align: center;
       font-size: 28px;
       margin-bottom: 30px;
+      color: #00b5c2;
     }
+
     .intro {
       display: flex;
       flex-wrap: wrap;
@@ -38,18 +42,22 @@
       gap: 40px;
       text-align: center;
     }
+
     .intro-text {
       max-width: 600px;
     }
+
     .intro-text h2 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #003f5c;
+      color: #00b5c2;
     }
+
     .intro-text p {
       font-size: 18px;
-      color: #444;
+      color: #333;
     }
+
     .intro-text a {
       display: inline-block;
       margin-top: 20px;
@@ -59,36 +67,28 @@
       border-radius: 8px;
       text-decoration: none;
     }
+
     .intro-text a:hover {
       background: #008f9e;
-      color: white;
-      transition: background 0.3s ease;
     }
-    .intro-img {
-      max-width: 100%;
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+
     .intro-img img {
       width: 100%;
       max-width: 500px;
       border-radius: 20px;
-      transition: transform 0.3s ease-in-out;
     }
-    .intro-img img:hover {
-      transform: scale(1.05);
-    }
+
     .slider-wrapper {
       position: relative;
       width: 100%;
       padding-top: 440px;
       direction: ltr;
     }
+
     .slider-wrapper input[type="radio"] {
       display: none;
     }
+
     .slider-wrapper label {
       cursor: pointer;
       margin: 0 6px;
@@ -99,11 +99,12 @@
       border-radius: 50%;
       background-size: cover;
       background-position: center;
-      transition: all 0.2s ease;
     }
+
     .label-1 { background-image: url('../images/service1.jpeg'); }
     .label-2 { background-image: url('../images/service2.jpeg'); }
     .label-3 { background-image: url('../images/service3.jpeg'); }
+
     .slider-wrapper ul {
       position: absolute;
       top: 0;
@@ -118,6 +119,7 @@
       border-radius: 20px;
       overflow: hidden;
     }
+
     .slider-wrapper ul li {
       position: absolute;
       top: 0;
@@ -129,69 +131,147 @@
       opacity: 0;
       transition: 0.6s ease;
       border-radius: 20px;
-      animation: fadeIn 1s ease-in-out;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+
     #slide1:checked ~ ul li:nth-child(1),
     #slide2:checked ~ ul li:nth-child(2),
     #slide3:checked ~ ul li:nth-child(3) {
       opacity: 1;
       z-index: 1;
     }
+
     .slider-wrapper .controls {
       text-align: center;
       margin-top: 20px;
     }
-    .categories {
+
+    .category-select-wrapper {
       text-align: center;
-      margin-top: 30px;
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
+      margin-bottom: 30px;
     }
-    .category-btn {
-      background: #00b5c2;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
+
+    #category-select {
       font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #00b5c2;
+      background-color: #fff;
+      color: #003f5c;
     }
-    .menu-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .menu-card {
+
+    .menu-slider-wrapper {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 20px;
-      background: #f0f9fa;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      gap: 10px;
     }
-    .menu-card img {
-      width: 100px;
-      height: 100px;
+
+    .menu-slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+      flex: 1;
+    }
+
+    .menu-card {
+      background-color: #f0f9fa;
+      color: #003f5c;
+      min-width: 360px;
+      max-width: 360px;
+      flex: 0 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: floatCard 4s ease-in-out infinite alternate;
+          height: 450px;
+          margin: auto;
+    }
+@media screen and (max-width: 768px) {
+      .menu-card img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: 12px;
+      transition: transform 0.4s ease;
     }
+      
+  }
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+
+    .menu-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    .menu-card img:hover {
+      transform: scale(1.08) rotate(1deg);
+    }
+
     .menu-card h3 {
-      margin: 0;
       font-size: 20px;
+      margin: 15px 0 6px;
     }
+
+    .menu-card .description {
+      font-size: 15px;
+      text-align: center;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
     .menu-card .price {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: bold;
       color: #00b5c2;
+      margin-bottom: 8px;
     }
+
+    .menu-card .add-icon {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      font-size: 20px;
+      background: #00b5c2;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav {
+      font-size: 24px;
+      background: #00b5c2;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+    }
+
     footer {
       background-color: #003f5c;
       color: white;
@@ -199,18 +279,11 @@
       padding: 20px;
       font-size: 14px;
     }
-    @media screen and (max-width: 768px) {
-      .intro {
-        flex-direction: column;
-        text-align: center;
-      }
-      .intro-text, .intro-img {
-        width: 100%;
-      }
-      .slider-wrapper ul li {
-        height: 250px;
-      }
-      .slider-wrapper {
-        padding-top: 300px;
-      }
-    }
+    .fade-in {
+    animation: fadeInCards 0.6s ease-in-out;
+  }
+
+  @keyframes fadeInCards {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
