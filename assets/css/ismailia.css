@@ -193,7 +193,7 @@
     position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: floatCard 4s ease-in-out infinite alternate;
-    height: 520px;
+    height: 420px;
     margin: auto;
     box-sizing: border-box;
   }
