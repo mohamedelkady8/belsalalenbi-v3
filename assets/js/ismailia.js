@@ -37,7 +37,7 @@ async function loadMenuData() {
         <h3>${item.name}</h3>
         <div class="description">${item.description || 'لا يوجد وصف متاح'}</div>
         <div class="price">${item.price}</div>
-        <div class="add-icon"></div>
+
       `;
       container.appendChild(card);
     });
