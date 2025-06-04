@@ -189,3 +189,6 @@ header img {
       font-size: 14px;
       margin-top: 60px;
     }
+    a {
+  text-decoration: none;
+}
