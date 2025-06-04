@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>new cairo Branch Menu - Belsalalah Alnabi Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/ismailia.css" />
+</head>
+<style>
+    .lang-switch {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #003f5c;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.lang-switch:hover {
+  background-color: #0077b6;
+}
+
+</style>
+<body>
+  <header>
+    <a href="index-en.html">Back to Branch Selection</a>
+    <h1>new cairo Branch</h1>
+    <a href="ismailia.html" class="lang-switch">العربية</a>
+  </header>
+
+  <section class="section">
+    <div class="intro">
+      <div class="intro-text">
+        <h2>Every Flavor Tells a Story</h2>
+       <section id="about-en" style="direction: ltr; font-family: 'Cairo', sans-serif; background-color: #f9f9f9; padding: 30px;">
+  <h2 style="color: #003f5c;">About Us</h2>
+  <p>
+    <strong>Where did the name "Alsalat Ala Alnaby" come from?</strong><br>
+    Our father used to own a large fish market in Ismailia. Whenever a new fishing boat arrived or a fresh fish batch was unloaded, we would say “Yalla, bless the Prophet” – in Arabic: “Yalla belsalat ‘ala elnaby” – as a sign of good fortune. That’s where the name was born.
+  </p>
+  <p>
+    The first branch was opened in Ismailia in 1995 at the local fish market near Al-Usra beach. Over time, it became one of the top seafood restaurants in the Canal cities.  
+    In 2019, the branch relocated to its current location in front of Al-Nawras Village.  
+    In 2024, we expanded with a second branch in New Cairo – Fifth Settlement.
+  </p>
+  <p>
+    Book by phone: <strong style="color: #00b5c2;">15567</strong>
+  </p>
+</section>
+
+        <a href="#menu-container">View Menu</a>
+      </div>
+      <div class="intro-img">
+        <img src="./assets/images/heroo.jfif" alt="About the restaurant">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Gallery</h2>
+    <div class="slider-wrapper">
+      <input type="radio" name="slider" id="slide1" checked>
+      <input type="radio" name="slider" id="slide2">
+      <input type="radio" name="slider" id="slide3">
+      <ul>
+        <li style="background-image: url('./assets/images/service1.jpeg');"></li>
+        <li style="background-image: url('./assets/images/service2.jpeg');"></li>
+        <li style="background-image: url('./assets/images/service3.jpeg');"></li>
+      </ul>
+      <div class="controls">
+        <label for="slide1" class="label-1"></label>
+        <label for="slide2" class="label-2"></label>
+        <label for="slide3" class="label-3"></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Food Menu</h2>
+    <div class="category-select-wrapper">
+      <label for="category-select">Choose a category:</label>
+      <select id="category-select"></select>
+    </div>
+    <div class="menu-slider-wrapper">
+      <button class="nav right" onclick="scrollMenu(-1)">&#8592;</button>
+      <div class="menu-slider" id="menu-container"></div>
+      <button class="nav right" onclick="scrollMenu(1)">&#8594;</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Belsalalah Alnabi Restaurant. All rights reserved.
+  </footer>
+
+  <script src="./assets/js/ismailia.js"></script>
+</body>
+</html>
